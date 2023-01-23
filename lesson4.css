@@ -1,5 +1,5 @@
 body {
-    background: url("img/pattern.png");
+    background: url("pattern.png");
 }
 table tr:nth-child(even){
     background: rgb(91, 101, 232);
