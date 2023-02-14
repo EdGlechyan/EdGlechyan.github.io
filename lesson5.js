@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title lesson5</title>
-</head>
-<body>
-    <form>
-    <input required type="number" placeholder="Цена товара" name="cost"><br>
-    <input  placeholder="Кол-во товара" name="count"><br>
-    <button name="sum" onclick="return Summa()">Итог</button>
-    </form>
-    <p>Итоговая стоимость: <span id="sum">0</span> рублей</p>
-    <script src="lesson5.js" defer></script>
-</body>
-</html>
+function Summa() {
+    let price = document.getElementsByName("cost");
+    let count = document.getElementsByName("count");
+    let result = document.getElementById("sum");
+    // Для price реализация иная в самом HTML
+    if (isNaN(count[0].value)) {
+        alert('Неверный формат числа');
+        result.innerHTML = 0;
+    } else {
+        result.innerHTML = (Number(price[0].value) * Number(count[0].value));
+    }
+    return false;
+}
+document.addEventListener("DOMContentLoaded", Summa);
